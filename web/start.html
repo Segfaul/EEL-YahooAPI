@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icons8-html-64.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="eel.js"></script>
+    <title>Stocks Stats</title>
+</head>
+<body>
+    <div class="box">
+        <form action="#">
+            <input type="password" id="stock", placeholder="STOCK">
+            <input type="submit", value= "check stats", id="btn">
+        </form>
+    </div>
+    <script>
+        let btn = document.querySelector('#btn');
+        btn.addEventListener("click", sendData);
+        async function sendData() {
+            let stockname = document.querySelector("#stock").value;
+            await eel.get_stats(stockname);
+        }
+    </script>
+</body>
+</html>
