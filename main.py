@@ -1,6 +1,8 @@
 import eel
 import yfinance as yf
 import matplotlib.pyplot as plt
+
+
 def stock_info(tag):
     try:
         stock = yf.Ticker(tag.upper())
@@ -10,8 +12,13 @@ def stock_info(tag):
     except:
         print("Incorrect input")
         return -1
+    
+    
 eel.init("web")
+
 @eel.expose
 def get_stats(stock_n):
     stock_info(stock_n)
+    
+    
 eel.start("start.html", size = (500, 500))
